@@ -4,8 +4,15 @@ fun main(args: Array<String>) {
     val handler: (Int) -> Unit = { arg -> println(arg) }
 
     e += handler
-    e.invoke(4)
+    e(4)    // Invoke the event
 
     e.clear()
-    e.invoke(21312)
+    e(21312)
+
+
+    val notificationHandler: (Unit) -> Unit = { println("Notified") }
+    val notification = Event<Unit>()
+
+    notification += notificationHandler
+    notification(Unit)  // Invoke the event with unit
 }

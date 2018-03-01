@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="kt-events">
+    <output-path>$PROJECT_DIR$/out/artifacts/kt_events</output-path>
+    <root id="archive" name="kt-events.jar">
+      <element id="module-output" name="Kt-Events" />
+    </root>
+  </artifact>
+</component>
