@@ -1,4 +1,5 @@
 # Kt-Events
+[![Build Status](https://travis-ci.org/shakram02/Kt-Events.svg?branch=master)](https://travis-ci.org/shakram02/Kt-Events)
 [![](https://jitpack.io/v/shakram02/Kt-Events.svg)](https://jitpack.io/#shakram02/Kt-Events)
 
 
