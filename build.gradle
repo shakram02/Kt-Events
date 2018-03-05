@@ -13,6 +13,9 @@ buildscript {
 
 apply plugin: 'kotlin'
 apply plugin: 'idea'
+apply plugin: 'maven'
+
+group = 'com.github.shakram02'
 
 repositories {
     mavenCentral()
