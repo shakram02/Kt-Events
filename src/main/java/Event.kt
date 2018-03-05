@@ -1,6 +1,4 @@
 import kotlinx.coroutines.experimental.launch
-import java.util.concurrent.Executors
-import kotlin.concurrent.thread
 
 /**
  * C# Style events

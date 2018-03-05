@@ -3,6 +3,8 @@ C# Style event for kotlin [source](https://discuss.kotlinlang.org/t/c-style-even
 
 Support for pooled events is enabled using [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 
+Check [test class](https://github.com/shakram02/Kt-Events/blob/master/src/test/java/EventTest.kt)
+
 - Use the `+=` operator to add a handler
 - Use the `-=` operator to delete a handler
 - Use `clear()` to delete all handlers
@@ -30,11 +32,9 @@ Support for pooled events is enabled using [kotlinx.coroutines](https://github.c
     for (i in 1..10) {
         pooledEvent += { _ ->
             // run{} is used just to type code on multiple lines
-            run {
-                val timeout = System.nanoTime() % 10000
-                Thread.sleep(timeout)
-                println(Thread.currentThread().name + " " + timeout)
-            }
+            val timeout = System.nanoTime() % 10000
+            Thread.sleep(timeout)
+            println(Thread.currentThread().name + " " + timeout)
         }
     }
 
