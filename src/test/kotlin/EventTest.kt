@@ -1,7 +1,8 @@
 import org.junit.Assert
 import org.junit.Test
+import shakram02.events.Event
+import shakram02.events.PooledEvent
 import java.util.concurrent.atomic.AtomicBoolean
-import java.util.concurrent.locks.ReentrantLock
 
 class EventTest {
 
