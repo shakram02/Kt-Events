@@ -1,6 +1,8 @@
 # Kt-Events
 C# Style event for kotlin [source](https://discuss.kotlinlang.org/t/c-style-events/2076)
 
+Support for pooled events is enabled using [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+
 - Use the `+=` operator to add a handler
 - Use the `-=` operator to delete a handler
 - Use `clear()` to delete all handlers
@@ -39,3 +41,6 @@ C# Style event for kotlin [source](https://discuss.kotlinlang.org/t/c-style-even
     pooledEvent(322)    // Fire an event
     Thread.sleep(10000) // Wait for threads to complete
 ```
+
+
+Interested in Kotlin coroutines? check [this](https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md#your-first-coroutine) out

@@ -29,6 +29,4 @@ class PooledEvent<T> : Event<T>() {
     override fun invoke(value: T) {
         handlers.forEach { h -> launch { h(value) } }
     }
-
-
 }
