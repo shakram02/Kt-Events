@@ -1,4 +1,3 @@
-import kotlinx.coroutines.experimental.sync.Mutex
 import org.junit.Assert
 import org.junit.Test
 import java.util.concurrent.atomic.AtomicBoolean
