@@ -10,6 +10,7 @@ _Store
 /clionSDK
 /android-studio/sdk
 out/
+target/
 /tmp
 workspace.xml
 *.versionsBackup

@@ -1,11 +1,4 @@
-# Kt-Events
-C# Style event for kotlin [source](https://discuss.kotlinlang.org/t/c-style-events/2076)
-
-- Use the `+=` operator to add a handler
-- Use the `-=` operator to delete a handler
-- Use `clear()` to delete all handlers
-
-```kotlin
+fun main(args: Array<String>) {
     val e = Event<Int>()
 
     val handler: (Int) -> Unit = { arg -> println(arg) }
@@ -38,4 +31,4 @@ C# Style event for kotlin [source](https://discuss.kotlinlang.org/t/c-style-even
 
     pooledEvent(322)    // Fire an event
     Thread.sleep(10000) // Wait for threads to complete
-```
+}
