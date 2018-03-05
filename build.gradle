@@ -3,6 +3,7 @@ buildscript {
 
     repositories {
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
@@ -11,27 +12,23 @@ buildscript {
 }
 
 apply plugin: 'kotlin'
-// apply plugin: 'application'
+apply plugin: 'idea'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
-kotlin  {
-	 experimental.coroutines 'enable'
+kotlin {
+    experimental.coroutines 'enable'
 }
 
 dependencies {
-	compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3'
-	testCompile 'junit:junit:4.1.12'
-	testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3'
+    testCompile 'junit:junit:4.1.12'
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }
 
 sourceSets {
     main.kotlin.srcDirs += 'src/main/kotlin'
     test.kotlin.srcDirs += 'src/test/kotlin'
-}
-
-task wrapper(type: Wrapper) {
-  gradleVersion = "4.1"
 }
