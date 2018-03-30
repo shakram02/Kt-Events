@@ -1,9 +1,8 @@
 buildscript {
-    ext.kotlin_version = '1.2.30'
+    ext.kotlin_version = '1.2.31'
 
     repositories {
         mavenCentral()
-        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
@@ -16,6 +15,7 @@ apply plugin: 'idea'
 apply plugin: 'maven'
 
 group = 'com.github.shakram02'
+version = '0.0.1'
 
 repositories {
     mavenCentral()
@@ -34,4 +34,13 @@ dependencies {
 sourceSets {
     main.kotlin.srcDirs += 'src/main/kotlin'
     test.kotlin.srcDirs += 'src/test/kotlin'
+}
+
+jar {
+    from sourceSets.main.allSource
+
+    // This line of code recursively collects and copies all of a project's files
+    // and adds them to the JAR itself. One can extend this task, to skip certain
+    // files or particular types at will
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
