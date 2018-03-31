@@ -10,12 +10,12 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
 apply plugin: 'kotlin'
 apply plugin: 'idea'
-apply plugin: 'maven'
 
 group = 'com.github.shakram02'
-version = '0.0.1'
+version = '0.0.3'
 
 repositories {
     mavenCentral()
@@ -25,15 +25,16 @@ kotlin {
     experimental.coroutines 'enable'
 }
 
-dependencies {
-    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3'
-    testCompile 'junit:junit:4.1.12'
-    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+configurations {
+    provided
+    compile.extendsFrom provided
 }
 
-sourceSets {
-    main.kotlin.srcDirs += 'src/main/kotlin'
-    test.kotlin.srcDirs += 'src/test/kotlin'
+dependencies {
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3'
+    provided "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    testCompile 'junit:junit:4.1.12'
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }
 
 jar {
@@ -42,5 +43,9 @@ jar {
     // This line of code recursively collects and copies all of a project's files
     // and adds them to the JAR itself. One can extend this task, to skip certain
     // files or particular types at will
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    // Use provided to declare already present library that will be provided by the runtime
+    // I marked the kotlin-runtiume as provided
+    from { (configurations.runtime - configurations.provided).collect {
+        it.isDirectory() ? it : zipTree(it)
+    } }
 }
